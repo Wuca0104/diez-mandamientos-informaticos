@@ -2,7 +2,6 @@
 let selectedItem = 0;
 let timer;
 
-
 var defaults = {
     spread: 360,
     ticks: 50,
@@ -57,15 +56,26 @@ function selectRandomItem() {
 }
 
 function startAnimation() {
+   
+    const boton = document.querySelector('#boton');
+    boton.disabled=true;
+  
     selectRandomItem();
-    setTimeout(stopAnimation, 2800);
+    setTimeout(stopAnimation, getRandomArbitrary(2500,2900));
+
     
   }
   
+  function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
   function stopAnimation() {
+    const boton = document.querySelector('#boton');
     clearTimeout(timer);
     shoot();
     cardText(selectedItem);
+
+    boton.disabled=false;
   }
 
   function cardText(selectedItem){

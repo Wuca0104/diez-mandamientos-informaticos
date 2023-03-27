@@ -4,7 +4,13 @@
 @import url('https://fonts.cdnfonts.com/css/toruksc');
 body{
     background-color: #f2f4f8;
+    background-image: url('https://img.freepik.com/foto-gratis/fondo-papel-textura-grunge-vintage_53876-103932.jpg?w=1380&t=st=1679938378~exp=1679938978~hmac=3d708a1b3bf29b9f010267606c913507a9e5b255e86eb53375ff39198f7f1ea2');
+    background-size: cover;
+   
+    
 }
+
+
 .button-container{
     height: 100px;
     display: flex;
@@ -27,9 +33,14 @@ body{
 	text-decoration:none;
 	text-shadow:2px 2px 0px #2f6627;
 }
-.button:hover {
+.button:disabled {
+	background-color:gray;
+  opacity: 0.7;
+}
+.button:hover:enabled {
 	background-color:red;
 }
+
 .button:active {
 	position:relative;
 	top:1px;
@@ -52,13 +63,15 @@ body{
   }
   
   .roulette-item {
-    display: flex;
+    
+    /*display: flex;*/
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: #fff;
-    font-size: 1.5em;
+    font-size: 1.2em;
     height: 100%;
-    min-width: 200px;
+    min-width: 155px;
     margin: 0 20px;
     border-radius: 10px;
     transform-origin: center center;
@@ -66,6 +79,7 @@ body{
     box-shadow: 0 14px 26px rgba(0,0,0,0.04);
     transition: all 0.3s ease-out;
     text-decoration: none;
+    opacity: 0.8;
   }
   
   .roulette-item.active {
@@ -157,6 +171,42 @@ body{
 
 
 /* Media queries */
+
+@media screen and (max-width: 1920px) {
+  .roulette-item {
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-size: 0.8em;
+    min-width: 100px;
+   
+    border-radius: 10px;
+    transform-origin: center center;
+    transition: transform 1s ease-in-out;
+    box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    margin:13px;
+  }
+  .roulette-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    width: 1000px;
+  }
+  .card-container {
+    font-family: 'Poppins',sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 460px;
+  }
+}
+
 @media screen and (max-width: 768px) {
 
   .button-container{
